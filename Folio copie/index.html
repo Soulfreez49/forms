@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+        <a id="accueil" href="index.html"><div class="logo">Folio<b>.</b></div></a>
+        <ul class="navItems">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="2.html">à propos</a></li>
+          <li><a href="">compétences</a></li>
+          <li><a href="">contact</a></li> 
+      </ul>
+      <div class="links">
+        <div id="heure"></div>
+      </div>
+    </nav> 
+
+
+    <div class="wrapper">
+      <div class="cols cols0">
+          <span class="topline">Bonjour, je suis</span>
+          <h1><span class="multiText">Étudiant</span></h1>
+          <p>Je m'appel Noha Benesteau j'ai 18ans, je suis actuellement en première année d'un cycle web et digital sur un pèriode de 3ans.
+            Je suis actuellement en recherche de stage du 08/04 avril au 06/06 juin 2024 dans le domaine du developpement web.
+          </p>
+          <div class="btns">
+            <a href="docs/cv.png" target="_blank"><button>télécharger CV</button></a>
+            <button>Projects</button>
+          </div>
+      </div>
+      <div class="cols cols1">
+        <div class="imgbox">
+          <img src="images/fond.png" id="splash">
+          <img src="images/people.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    //afficher la fentre de l'image
+    var typeingEffect = new Typed(".multiText",{
+      strings : ["Noha","Étudiant","coder", "designer"],
+      loop : true,
+      typeSpeed : 100,
+      backSpeed : 80,
+      backDelay : 1500, 
+    })
+
+    function showModal(imageSrc) {
+    var modal = document.getElementById('myModal');
+    var modalImage = document.getElementById('modalImage');
+    
+    modal.style.display = 'flex'; 
+    modalImage.src = imageSrc; 
+  }
+
+  // petite croix pour partir 
+  function closeModal() {
+    document.getElementById('myModal').style.display = 'none';
+  }
+
+
+  //progress bar
+  document.addEventListener('DOMContentLoaded', function() {
+    setProgress('html', 50);
+    setProgress('css', 50);
+    setProgress('js', 10);
+    setProgress('bootstrap', 10);
+    setProgress('wordpress', 50);
+  });
+
+  function setProgress(skill, percentage) {
+    const progressBar = document.querySelector(`.${skill}`);
+    progressBar.style.width = `${percentage}%`;
+  }
+
+
+  //heure
+  
+
+  function afficherHeure() {
+
+    var date = new Date();
+
+
+    var heures = date.getHours();
+    var minutes = date.getMinutes();
+    var secondes = date.getSeconds();
+
+
+    heures = heures < 10 ? "0" + heures : heures;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    secondes = secondes < 10 ? "0" + secondes : secondes;
+
+
+    var heureActuelle = heures + ":" + minutes + ":" + secondes;
+
+
+    document.getElementById("heure").innerHTML = heureActuelle;
+}
+
+setInterval(afficherHeure, 1000);
+
+afficherHeure();
+
+
+
+
+// contact forms
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const responseElement = document.getElementById('response');
+
+    // You can perform additional validation or send the data to a server here
+    // For this example, we'll just display a simple response message
+    const responseMessage = `Thank you, ${name}! Your message has been sent.`;
+    responseElement.textContent = responseMessage;
+
+    // Clear the form after submission
+    document.getElementById('contactForm').reset();
+
+    // Optionally, clear the response message after a delay
+    setTimeout(function () {
+        responseElement.textContent = '';
+    }, 5000);
+});
+
+  </script>
+
+<div class="modal" id="myModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img src="" id="modalImage" alt="Image en grand">
+  </div>
+</div>
+
+
+
+<div class="xop-banner">...</div>
+  <div class="projects">
+    <h1>Projects<b>.</b></h1>
+  </div>
+  <div class="site-container">
+    <article class="article-card">
+      <figure class="article-image">
+        <img src="images/affiche.png" alt="">
+      </figure>
+      <div class="article-content">
+        <a href="#" class="card-category">Project</a>
+        <h2 class="card-title"> Affiche de chaussure nike</h2>
+        <p class="card-excerpt"> lorem impsum abulati delorasi banulopimure de gardoni benu ceveratitunion</p>
+        <div class="bouttonCode">
+          <button onclick="showModal('images/affiche.png')">Voir l'Affiche</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <figure class="article-image">
+        <img src="images/orca-.png" alt="">
+      </figure>
+      <div class="article-content">
+        <a href="#" class="card-category">Project</a>
+        <h2 class="card-title"> Affiche d'un Orque </h2>
+        <p class="card-excerpt"> Création d'un Orque sur Illustrator, qui a été fait a partir de supperposition de cercle..</p>
+        <div class="bouttonCode">
+          <button onclick="showModal('images/orca-.png')">Voir l'Affiche</button>
+        </div>
+      </div>
+    </article>
+
+
+
+
+
+    <article class="article-card">
+      <figure class="article-image">
+        <img src="images/album.png" alt="">
+      </figure>
+      <div class="article-content">
+        <a href="#" class="card-category">Project</a>
+        <h2 class="card-title"> Album Artiste</h2>
+        <p class="card-excerpt"> lorem impsum abulati delorasi banulopimure de gardoni benu ceveratitunion</p>
+        <div class="bouttonCode">
+          <button onclick="showModal('images/album.png')">Voir l'Affiche</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="article-card">
+      <figure class="article-image">
+        <img src="images/Logo-Benesteau-Noha.png" alt="">
+      </figure>
+      <div class="article-content">
+        <a href="#" class="card-category">Project</a>
+        <h2 class="card-title"> Logo Noha Benesteau</h2>
+        <p class="card-excerpt"> lorem impsum abulati delorasi banulopimure de gardoni benu ceveratitunion</p>
+        <div class="bouttonCode">
+          <button onclick="showModal('images/Logo-Benesteau-Noha.png')">Voir l'Affiche</button>
+        </div>
+      </div>
+    </article>    
+  </div>
+
+
+
+
+  <section id="experience" >
+    <div class="container-exp">
+        <div class="divider white"></div>
+        <div class="projects">
+            <h1>expérience professionnelle<b class="point-exp">.</b> </h1>
+        </div>
+        <ul class="timeline" >
+            <li>
+                <div class="timeline-badge" >
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                    </svg></span>
+                </div>
+                <div class="timeline-panel-container" >
+                    <div class="timeline-panel" >
+                        <div class="timeline-heading">
+                            <h3>Le Cercle des Psychanalystes Associés</h3>
+                            <h4>Développeur Web junior</h4>
+                            <p class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                              </svg> 2022-2023</p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Rafraichissement d'un site internet.</p>
+                            <p>Changement du design.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-badge" >
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                    </svg></span>
+                </div>
+                <div class="timeline-panel-container-inverted" >
+                    <div class="timeline-panel" >
+                        <div class="timeline-heading">
+                            <h3>Calonna</h3>
+                            <h4>Réparateur Informatique</h4>
+                            <p class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                              </svg> 2021-2022</p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Réparation d'ordinateur portable et fixe.</p>
+                            <p>Réparation de téléphone.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-badge" >
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                    </svg></span>
+                </div>
+                <div class="timeline-panel-container" >
+                    <div class="timeline-panel" >
+                        <div class="timeline-heading">
+                            <h3>Le Café Bondu</h3>
+                            <h4>Restaurateur</h4>
+                            <p class="text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                              </svg> 2019-2020</p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Préparation des repas en temps que cuisinier.</p>
+                            <p>Poste de plongiste, effectuer le nettoyage de la vaisselle.</p>
+                            <p>Serveur en salle.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+  </section>
+
+  <div class="projects">
+    <h1>Compétences<b>.</b></h1>
+  </div>
+  <div class="progress-container">
+    
+    <span class="label">HTML</span>
+    <div class="progress-bar">
+      <div class="progress-fill html" style="width: 50%;"></div>
+    </div>
+  
+    <span class="label">CSS</span>
+    <div class="progress-bar">
+      <div class="progress-fill css" style="width: 50%;"></div>
+    </div>
+  
+    <span class="label">JS</span>
+    <div class="progress-bar">
+      <div class="progress-fill js" style="width: 10%;"></div>
+    </div>
+  
+    <span class="label">Bootstrap</span>
+    <div class="progress-bar">
+      <div class="progress-fill bootstrap" style="width: 10%;"></div>
+    </div>
+  
+    <span class="label">WordPress</span>
+    <div class="progress-bar">
+      <div class="progress-fill wordpress" style="width: 70%;"></div>
+    </div>
+  </div>
+
+<div id="contact-form">
+  <div class="container-form">
+    <div id="contact-title" class="projects">
+      <h1>Me contacter<b>.</b></h1>
+    </div>
+    <div class="yellow-block"></div>
+    <div class="black-block">
+      <h2 class="title-blackBlock">Info</h2>
+      <p class="p-blackBlock"><img class="img-blackBlock" src="images/mail.png" alt="">noha.benesteau@my-digital-school.org</p>
+      <p class="p-blackBlock"><img class="img-blackBlock" src="images/téléphone.png" alt="">07 84 28 85 58</p>
+      <p class="p-blackBlock"><img class="img-blackBlock" src="images/insta.png" alt="">Noha.benesteau</p>
+      <p class="p-blackBlock"><img class="img-blackBlock" src="images/linkedin.png" alt="">Benesteau-Noha</p>
+    </div>
+    <form name="contact" method="POST" id="contactForm" data-netlify="true" onSubmit="submit" netlify>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button class="button-contact" type="submit">Envoyer</button>
+    </form>
+    <div id="response"></div>
+</div>
+</div>
+
+
+</body>
+</html>
